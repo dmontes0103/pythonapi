@@ -8,13 +8,7 @@ from flask_cors import CORS, cross_origin
 
 app = Flask(__name__)
 
-cors = CORS(app)
-app.config['CORS_HEADERS'] = 'Content-Type'
-cors = CORS(app, resources={
-    r"/*":{
-        "origins":"*"
-    }
-})
+CORS(app, resources=r'/api/*', allow_headers='Content-Type')
 
 #print('JSON:',json_data)
 
