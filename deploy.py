@@ -15,7 +15,3 @@ def index():
     reader = csv.DictReader(io.StringIO(csvResponse.text))
     json_data = json.dumps(list(reader))
     return json_data
-
-@app.route('/')
-def home():
-    return '<h2>Welcome to Districts API</h1>'
