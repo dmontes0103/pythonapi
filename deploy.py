@@ -14,4 +14,4 @@ def index():
     print(csvResponse.text)    
     reader = csv.DictReader(io.StringIO(csvResponse.text))
     json_data = json.dumps(list(reader))
-    return '<h1> Deployted </h1>'
+    return json_data
