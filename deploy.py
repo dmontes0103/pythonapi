@@ -1,6 +1,6 @@
 from os import path
 import requests
-import json,csv,io
+import json,csv,io,os
 from test import csv_to_json
 from flask import Flask
 from flask_cors import CORS, cross_origin
@@ -18,8 +18,9 @@ def index():
     mes = x.strftime("%m")
     dia = x.strftime("%d")
     #url = f"http://geovision.uned.ac.cr/oges/archivos_covid/{mes}_{dia}/{mes}_{dia}_CSV.csv"
-    try:        
-        data = csv_to_json('/data/dummydata.csv')
+    try:       
+        cwd = os.getcwd() 
+        data = csv_to_json(f'{cwd}/data/dummydata.csv')
     except Exception as err:
         return str(err)
     return app.response_class(response=json.dumps(data), status=200, mimetype='application/json')
