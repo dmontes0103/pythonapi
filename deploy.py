@@ -20,7 +20,7 @@ def index():
     try:
         data = csv_to_json(r'data\dummydata.csv')
     except Exception as err:
-        return "Error converting file"
+        return err
     return app.response_class(response=json.dumps(data), status=200, mimetype='application/json')
     
 

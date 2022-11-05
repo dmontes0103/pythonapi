@@ -18,8 +18,7 @@ def csv_to_json(csvFilePath):
     with open(jsonFilePath, 'w', encoding='utf-8') as jsonf: 
         jsonString = json.dumps(jsonArray)
         jsonf.write(jsonString)
-          
-csvFilePath = r'data\dummydata.csv'
+#csvFilePath = r'data\dummydata.csv'
 
 
 #print(csv_to_json(csvFilePath))
